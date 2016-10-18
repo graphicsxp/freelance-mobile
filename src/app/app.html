@@ -13,7 +13,7 @@
     <ion-list>
       <ion-item menuClose (click)="openPage(orderFormListComponent)">
         Order Forms
-        <ion-badge item-right item>{{numberOfOrderForms}}</ion-badge>
+        <ion-badge item-right item *ngIf="numberOfOrderForms > 0">{{numberOfOrderForms}}</ion-badge>
       </ion-item>
     </ion-list>
     <div style="position: absolute; bottom: 40px; width: 100%">
