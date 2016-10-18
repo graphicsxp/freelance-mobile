@@ -1,0 +1,38 @@
+<ion-header class="opaque">
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>Order Forms</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+<ion-content padding class="grid-basic-page" *ngIf="orderForms" fullscreen>
+	<ion-list>
+		<ion-list-header>
+			{{orderForms.length }} order forms were found.
+		</ion-list-header>
+		<ion-item *ngFor="let orderForm of orderForms" class="item item-icon-right">
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						<p> Order form #{{orderForm.frameworkContractNumber}}</p>
+						<p>
+							<ion-note>created on {{orderForm.signatureDate | date:'d/M/yyyy'}} at {{orderForm.signatureDate | date:'shortTime'}}</ion-note>
+						</p>
+						<p>
+							<ion-note>for request {{orderForm.requestIdentifier}}</ion-note>
+						</p>
+					</ion-col>
+					<ion-col width-60>
+						<ion-icon name="download" item-right color="primary" class="download" (click)="openOrderForm(orderForm)"></ion-icon>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+			<i class="icon ion-chevron-right icon-accessory"></i>
+		</ion-item>
+	</ion-list>
+</ion-content>

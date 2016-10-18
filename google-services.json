@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "623443274766",
+    "firebase_url": "https://freelance-mobile.firebaseio.com",
+    "project_id": "freelance-mobile",
+    "storage_bucket": "freelance-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623443274766:android:ef4d909dc9235365",
+        "android_client_info": {
+          "package_name": "com.freelancemobile.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623443274766-pk5hbebhd3jb681b7ot038sn2ftf0n69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChMLkjQIgrULFtxzhhmShn9HTj0IIMyiU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
