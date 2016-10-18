@@ -4,7 +4,12 @@ export interface IOrderForm {
     costOfBdc: number;
     externalProvider: string;
     frameworkContractNumber: string;
-    nameOfExternalVendor: string;
     requestIdentifier: string;
     signatureDate: Date;
+    service: string;
+    taskDeadline: Date;
+    sourceLanguage: string;
+    targetLanguage: string;
+    commitmentNumber: string;
+    fileUrl: string;
 }

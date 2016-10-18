@@ -18,8 +18,11 @@
 		<ion-item *ngFor="let orderForm of orderForms" class="item item-icon-right">
 			<ion-grid>
 				<ion-row>
+					<ion-col width-40>
+						<ion-badge>{{orderForm.frameworkContractNumber}}</ion-badge>
+					</ion-col>
 					<ion-col>
-						<p> Order form #{{orderForm.frameworkContractNumber}}</p>
+						<p> Service {{orderForm.service}}</p>
 						<p>
 							<ion-note>created on {{orderForm.signatureDate | date:'d/M/yyyy'}} at {{orderForm.signatureDate | date:'shortTime'}}</ion-note>
 						</p>
@@ -27,9 +30,9 @@
 							<ion-note>for request {{orderForm.requestIdentifier}}</ion-note>
 						</p>
 					</ion-col>
-					<ion-col width-60>
+					<!--<ion-col width-60>
 						<ion-icon name="download" item-right color="primary" class="download" (click)="openOrderForm(orderForm)"></ion-icon>
-					</ion-col>
+					</ion-col>-->
 				</ion-row>
 			</ion-grid>
 			<i class="icon ion-chevron-right icon-accessory"></i>
