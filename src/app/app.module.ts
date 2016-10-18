@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 import { OrderFormListComponent } from '../pages/orderForm/orderForm-list/orderForm-list.component';
 import { OrderFormDetailComponent } from '../pages/orderForm/orderForm-detail/orderForm-detail.component';
 
+import {TutorialComponent} from '../pages/tutorial/tutorial.component'
+
 import { LoginComponent } from '../pages/login/login.component';
 import { SignupComponent } from '../pages/signup/signup.component';
 
@@ -13,9 +15,6 @@ import { HeaderComponent } from '../pages/shared/component/header.component';
 
 import { BaseService } from '../providers/base.service';
 import { LoadingService } from '../pages/shared/service/loading-service';
-
-import { ChartsModule } from 'ng2-charts/ng2-charts';
-//import { ChartsModule } from '@progress/kendo-angular-charts';
 
 
 import 'rxjs/Rx'; // load all features of reactive extensions
@@ -47,10 +46,10 @@ const cloudSettings: CloudSettings = {
     OrderFormListComponent,
     LoginComponent,
     SignupComponent,
-    HeaderComponent
+    HeaderComponent,
+    TutorialComponent
   ],
   imports: [
-    ChartsModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings)
   ],
@@ -60,7 +59,8 @@ const cloudSettings: CloudSettings = {
     OrderFormDetailComponent,
     OrderFormListComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TutorialComponent
   ],
   providers: [LoadingService, BaseService]
 })

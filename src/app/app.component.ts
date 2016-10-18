@@ -3,6 +3,7 @@ import { Nav, Platform, AlertController } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { OrderFormListComponent } from '../pages/orderForm/orderForm-list/orderForm-list.component';
+import { TutorialComponent } from '../pages/tutorial/tutorial.component';
 import { LoginComponent } from '../pages/login/login.component';
 import { Auth, User } from '@ionic/cloud-angular';
 import { Push, PushToken } from '@ionic/cloud-angular';
@@ -17,8 +18,9 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
   username: string;
-  requestListComponent = OrderFormListComponent;
   numberOfOrderForms: number = 0;
+  orderFormListComponent = OrderFormListComponent;
+  tutorialComponent = TutorialComponent;
 
   constructor(public platform: Platform, private _auth: Auth, private _user: User, private _alertController: AlertController, public push: Push) {
     this.initializeApp();
@@ -47,7 +49,7 @@ export class MyApp {
 
       this.push.rx.notification()
         .subscribe((msg) => {
-          this.numberOfOrderForms ++;
+          this.numberOfOrderForms++;
         });
 
       StatusBar.styleDefault();
