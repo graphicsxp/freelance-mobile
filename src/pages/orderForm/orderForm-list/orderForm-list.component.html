@@ -15,7 +15,7 @@
 		<ion-list-header>
 			{{orderForms.length }} order forms were found.
 		</ion-list-header>
-		<ion-item *ngFor="let orderForm of orderForms" class="item item-icon-right">
+		<ion-item *ngFor="let orderForm of orderForms" class="item item-icon-right" (click)="itemSelected(orderForm)">
 			<ion-grid>
 				<ion-row>
 					<ion-col width-40>

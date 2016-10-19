@@ -34,8 +34,6 @@ export class OrderFormListComponent
 
   itemSelected(item: IOrderForm): void {
     this._navCtrl.push(OrderFormDetailComponent, { id: item.id })
-    //let modal = this._modalCtrl.create(OrderFormDetailComponent, item);
-    //modal.present();
   }
 
   openOrderForm(item: IOrderForm): void {
