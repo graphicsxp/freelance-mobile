@@ -38,7 +38,7 @@ export class OrderFormListComponent
 
   openOrderForm(item: IOrderForm): void {
     let fileTransfer: Transfer = new Transfer();
-    let targetPath = cordova.file.externalDataDirectory + 'myOrderForm.pdf';
+    let targetPath = cordova.file.dataDirectory + 'myOrderForm.pdf';
 
     fileTransfer.download(item.fileUrl, targetPath).then((res) => {
       console.log('the file was downloaded successfully:' + res);
