@@ -1,20 +1,23 @@
-import { Injectable } from '@angular/core';
-import { Observable } from  'rxjs/Observable';
+import { Injectable, Inject } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { IOrderForm } from '../model/orderform-model';
 import { BaseService } from '../../../providers/base.service';
+import { Http } from '@angular/http';
+import { LoadingService } from '../../shared/service/loading-service';
 
 @Injectable()
-export class OrderFormService {
-        
-    constructor(private _baseService: BaseService<IOrderForm>) { 
-        this._baseService.serviceUrl = './build/orderForms.json';
-    } 
+export class OrderFormService extends BaseService<IOrderForm>{
 
-    getAll(): Observable<IOrderForm[]> {
-        return this._baseService.getAll();
-    }
+  constructor(_http: Http,  @Inject(LoadingService) loadingService: LoadingService) {
+    super(_http, loadingService);
+    this.serviceUrl = './build/orderForms.json';
+  }
 
-    getById(id: number): Observable<IOrderForm>{
-        return this._baseService.getById(id); 
-    }
+  getAll(): Observable<IOrderForm[]> {
+    return super.getAll();
+  }
+
+  getById(id: number): Observable<IOrderForm> {
+    return super.getById(id);
+  }
 }

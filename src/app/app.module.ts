@@ -6,14 +6,15 @@ import { MyApp } from './app.component';
 import { OrderFormListComponent } from '../pages/orderForm/orderForm-list/orderForm-list.component';
 import { OrderFormDetailComponent } from '../pages/orderForm/orderForm-detail/orderForm-detail.component';
 
-import {TutorialComponent} from '../pages/tutorial/tutorial.component'
+import { TutorialComponent } from '../pages/tutorial/tutorial.component'
 
 import { LoginComponent } from '../pages/login/login.component';
 import { SignupComponent } from '../pages/signup/signup.component';
 
 import { HeaderComponent } from '../pages/shared/component/header.component';
 
-import { BaseService } from '../providers/base.service';
+// import { BaseService } from '../providers/base.service';
+import { OrderFormService } from '../pages/orderForm/service/orderForm-service';
 import { LoadingService } from '../pages/shared/service/loading-service';
 
 
@@ -62,6 +63,6 @@ const cloudSettings: CloudSettings = {
     SignupComponent,
     TutorialComponent
   ],
-  providers: [LoadingService, BaseService]
+  providers: [LoadingService, OrderFormService]
 })
 export class AppModule { }

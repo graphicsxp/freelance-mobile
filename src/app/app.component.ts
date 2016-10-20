@@ -22,18 +22,18 @@ export class MyApp {
   orderFormListComponent = OrderFormListComponent;
   tutorialComponent = TutorialComponent;
 
-  constructor(public platform: Platform, private _auth: Auth, private _user: User, private _alertController: AlertController, public push: Push) {
+  constructor(public platform: Platform, private _auth: Auth, public user: User, private _alertController: AlertController, public push: Push) {
     this.initializeApp();
 
     let menu: any;
 
     if (this._auth.isAuthenticated()) {
-      menu = { title: 'Welcome ' + this._user.details.name + ' (Logout)', component: null }
+      menu = { title: 'Welcome ' + this.user.details.name + ' (Logout)', component: null }
     } else {
       menu = { title: 'Login', component: LoginComponent }
     }
 
-    this.username = this._user.details.username;
+    this.username = this.user.details.username;
   }
 
   initializeApp() {
