@@ -24,15 +24,12 @@
 					<ion-col>
 						<p> Service {{orderForm.service}}</p>
 						<p>
-							<ion-note>created on {{orderForm.signatureDate | date:'d/M/yyyy'}} at {{orderForm.signatureDate | date:'shortTime'}}</ion-note>
+							<ion-note>Created on {{orderForm.signatureDate | date:'d/M/yyyy'}} at {{orderForm.signatureDate | date:'shortTime'}}</ion-note>
 						</p>
 						<p>
-							<ion-note>for request {{orderForm.requestIdentifier}}</ion-note>
+							<ion-note>Request {{orderForm.requestIdentifier}}</ion-note>
 						</p>
 					</ion-col>
-					<!--<ion-col width-60>
-						<ion-icon name="download" item-right color="primary" class="download" (click)="openOrderForm(orderForm)"></ion-icon>
-					</ion-col>-->
 				</ion-row>
 			</ion-grid>
 			<i class="icon ion-chevron-right icon-accessory"></i>

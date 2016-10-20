@@ -18,15 +18,23 @@
 
 	<ion-card *ngIf="myOrderForm">
 		<ion-item class="item item-divider item-energized">
-
-			<h2>Order form #{{myOrderForm.frameworkContractNumber}}</h2>
+			<ion-badge>{{myOrderForm.frameworkContractNumber}}</ion-badge>
+			<ion-icon name="download" item-right color="primary" class="download" (click)="openOrderForm(myOrderForm)"></ion-icon>
 		</ion-item>
 		<ion-item>
-			<p>{{myOrderForm.requestIdentifier}}</p>
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						<h2>{{myOrderForm.client}}</h2>
+						<h4>{{myOrderForm.service}} from {{myOrderForm.sourceLanguage}} to {{myOrderForm.targetLanguage}}</h4>
+						<p>Signed on {{myOrderForm.signatureDate | date:'d/M/yyyy'}} at {{myOrderForm.signatureDate | date:'shortTime'}}</p>
+						<p>Deadline {{myOrderForm.taskDeadline | date:'d/M/yyyy'}} at {{myOrderForm.signatureDate | date:'shortTime'}}</p>
+					</ion-col>
+					<ion-col width-40 item-right>
+						<h3>{{myOrderForm.requestIdentifier}}</h3>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
 		</ion-item>
-		<ion-item offset-40 class="item item-divider">
-			<h3>signed on {{myOrderForm.signatureDate | date:'d/M/yyyy'}} at {{myOrderForm.signatureDate | date:'shortTime'}}</h3>
-		</ion-item>
-
 	</ion-card>
 </ion-content>
