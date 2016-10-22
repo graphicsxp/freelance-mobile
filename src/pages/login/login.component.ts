@@ -1,4 +1,4 @@
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, MenuController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { LoginService } from '../shared/service/login-service';
 import { OrderFormListComponent } from '../orderForm/orderForm-list/orderForm-list.component'
@@ -20,10 +20,11 @@ export class LoginComponent {
     errorMessage: string;
     loading: any;
 
-    constructor(private _loginService: LoginService, private _loadingController: LoadingController, private _navController: NavController, private _auth: Auth) { }
+    constructor(private _loginService: LoginService, private _loadingController: LoadingController, private _navController: NavController, private _auth: Auth,
+    private _menuController:MenuController) { }
 
     ionViewDidLoad() {
-
+        this._menuController.enable(false);
         // this.showLoader();
 
         // //Check if already authenticated
@@ -36,6 +37,10 @@ export class LoginComponent {
         //     console.log("Not already authorized");
         //     this.loading.dismiss();
         // }
+    }
+
+    ionViewDidLeave(){
+      this._menuController.enable(true);
     }
 
     login() {

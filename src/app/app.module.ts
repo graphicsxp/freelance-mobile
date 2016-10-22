@@ -16,6 +16,7 @@ import { HeaderComponent } from '../pages/shared/component/header.component';
 // import { BaseService } from '../providers/base.service';
 import { OrderFormService } from '../pages/orderForm/service/orderForm-service';
 import { LoadingService } from '../pages/shared/service/loading-service';
+import { NetworkAvailabilityService } from '../pages/shared/service/networkAvailability-service';
 
 
 import 'rxjs/Rx'; // load all features of reactive extensions
@@ -63,6 +64,6 @@ const cloudSettings: CloudSettings = {
     SignupComponent,
     TutorialComponent
   ],
-  providers: [LoadingService, OrderFormService]
+  providers: [LoadingService, OrderFormService, NetworkAvailabilityService]
 })
 export class AppModule { }

@@ -61,7 +61,8 @@
     "cordova-plugin-badge",
     "cordova-plugin-file-transfer",
     "cordova-plugin-vibration",
-    "cordova-plugin-app-version"
+    "cordova-plugin-app-version",
+    "cordova-plugin-network-information"
   ],
   "cordovaPlatforms": []
 }
