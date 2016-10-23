@@ -7,6 +7,7 @@ import { TutorialComponent } from '../pages/tutorial/tutorial.component';
 import { LoginComponent } from '../pages/login/login.component';
 import { Auth, User } from '@ionic/cloud-angular';
 import { Push, PushToken } from '@ionic/cloud-angular';
+import { AppVersion } from 'ionic-native';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,6 +22,12 @@ export class MyApp {
   numberOfOrderForms: number = 0;
   orderFormListComponent = OrderFormListComponent;
   tutorialComponent = TutorialComponent;
+  app: any = {
+    name: '',
+    versionCode: '',
+    versionNumber: '',
+    packageName: ''
+  };
 
   constructor(public platform: Platform, private _auth: Auth, public user: User, private _alertController: AlertController, public push: Push) {
     this.initializeApp();
@@ -40,6 +47,10 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      AppVersion.getAppName().then(v => this.app['name'] = v);
+      AppVersion.getVersionCode().then(v => this.app['versionCode'] = v);
+      AppVersion.getVersionNumber().then(v => this.app['versionNumber'] = v);
+      AppVersion.getPackageName().then(v => this.app['versionCode'] = v);
 
       this.push.register().then((t: PushToken) => {
         return this.push.saveToken(t);
