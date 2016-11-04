@@ -13,8 +13,8 @@
     "run:before": "build"
   },
   "dependencies": {
-    "@ionic/cloud-angular": "0.5.2",
-    "@ionic/storage": "1.0.3",
+    "@ionic/cloud-angular": "0.7.0",
+    "@ionic/storage": "1.1.6",
     "ionic-angular": "2.0.0-rc.1",
     "ionic-native": "2.2.6",
     "ionicons": "3.0.0",
@@ -32,13 +32,13 @@
     "rxjs": "5.0.0-beta.12",
     "zone.js": "^0.6.21",
 
-    "@progress/kendo-angular-charts": "0.7.4",
-    "@telerik/kendo-theme-default": "1.26.1",
+    "@progress/kendo-angular-charts": "0.8.1",
+    "@telerik/kendo-theme-default": "^1.28.1",
     "chart.js": "2.3.0",
     "ng2-charts": "1.4.0"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "latest",
+    "@ionic/app-scripts": "0.0.38",
     "typescript": "^2.0.3"
   },
   "config": {
